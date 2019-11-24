@@ -1,16 +1,16 @@
-# import
-import numpy as np
 import copy
+
+import numpy as np
 from math import sqrt
 
 
-class GeneralizedElasticNetSover(object):
-    '''
+class GeneralizedElasticNetSolver(object):
+    """
     Generalized Elastic Net solver
-    '''
+    """
 
     def gmulup_solve(self, Amat, lvec, bvec, dvec, v0, err_tol=1e-8, text='Off', text_fr=200):
-        '''
+        """
         The generalized multiplcative updates solver
 
         :param Amat: A strictly positive definite matrx
@@ -31,7 +31,7 @@ class GeneralizedElasticNetSover(object):
         :type text_fr: int
         :return: Solution of loss function
         :rtype: array
-        '''
+        """
 
         A_plus = copy.deepcopy(Amat)
         A_plus[A_plus < 0] = 0
@@ -78,7 +78,7 @@ class GeneralizedElasticNetSover(object):
         return v
 
     def solve(self, Xmat, Yvec, lam_1, lam_2, lowbo, upbo, wvec, Sigma, err_tol=1e-8, text='Off', text_fr=200):
-        '''
+        """
         Solve the linear regression by the generalized muliplcative updates
         :param Xmat: The design matrix
         :type Xmat: ndarray
@@ -104,8 +104,8 @@ class GeneralizedElasticNetSover(object):
         :type text_fr: int
         :return: Solution of the linear regression
         :rtype: array
-        '''
-    
+        """
+
         p = Xmat.shape[1]
         Amat = Xmat.transpose().dot(Xmat) + lam_2 * Sigma
         bvec = 2 * Amat.dot(lowbo) - 2 * Xmat.transpose().dot(Yvec)
@@ -117,7 +117,6 @@ class GeneralizedElasticNetSover(object):
 
         beta = v + lowbo
         return beta
-
 
 # To solve prob: Yvec=Xmat*beta
 
