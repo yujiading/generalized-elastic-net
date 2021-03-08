@@ -9,13 +9,13 @@ The algorithm is available through this public Python library. It applys multipl
 
 ## To install
 The generalized elastic net library requires Python 3 and is pip friendly. To get started, simply do:
-'''
+```
 pip install generalized-elastic-net
-'''
+```
 or check out the code from out GitHub repository.
 You can now use the package in Python with:
-'''
+```
 import generalized-elastic-net
-'''
+```
 
 ## Examples
