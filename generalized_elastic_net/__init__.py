@@ -1,2 +1,1 @@
-from .regressor import GeneralizedElasticNetRegressor
-from .solver import GeneralizedElasticNetSolver
+from .generalized_elastic_net import GeneralizedElasticNet
