@@ -1,7 +1,4 @@
 # Generalized Elastic Net Library
-- Version:
-- Released: 
-- Publication: [arXiv]
 
 Generalized elastic net is a penalty method for variable selection and regularization in high-dimensional sparse linear models. It generalizes and outperforms the lasso, ridge, and nonnegative elastic net through (1) capturing the penalty weights for individual features or/and interactions between any two features; (2) controling the range of the coefficients.
 
